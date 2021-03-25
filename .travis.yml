@@ -6,7 +6,7 @@ before_install:
   - docker build -t shashwatmath/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true shashwatmath/react-test npm test -- --watchAll
+  - docker run -e CI=true shashwatmath/react-test npm test
 
 after_success:
   - docker build -t shashwatmath/multi-client ./client
