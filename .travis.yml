@@ -4,7 +4,6 @@ services:
 
 before_install:
   - docker build -t shashwatmath/react-test -f ./client/Dockerfile.dev ./client
-  - chmod +x node_modules/.bin/react-scripts
 
 script:
   - docker run -e CI=true shashwatmath/react-test npm test
